@@ -21,7 +21,19 @@
     <dependencies>
         <dependency>
             <groupId>vincentlow.twittur</groupId>
-            <artifactId>gateway-service</artifactId>
+            <artifactId>gateway-service-impl</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>vincentlow.twittur</groupId>
+            <artifactId>gateway-web-model</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>vincentlow.twittur</groupId>
+            <artifactId>gateway-model</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
