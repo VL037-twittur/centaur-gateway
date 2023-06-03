@@ -9,7 +9,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>gateway-app</artifactId>
+    <artifactId>gateway-web</artifactId>
     <packaging>jar</packaging>
 
     <properties>
@@ -21,19 +21,21 @@
     <dependencies>
         <dependency>
             <groupId>vincentlow.twittur</groupId>
-            <artifactId>gateway-config</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>vincentlow.twittur</groupId>
-            <artifactId>gateway-filter</artifactId>
+            <artifactId>base-web</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>vincentlow.twittur</groupId>
-            <artifactId>gateway-web</artifactId>
+            <artifactId>gateway-model</artifactId>
             <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>vincentlow.twittur</groupId>
+            <artifactId>gateway-web-model</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

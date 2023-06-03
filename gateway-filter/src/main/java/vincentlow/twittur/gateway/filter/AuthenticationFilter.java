@@ -8,7 +8,10 @@ import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFac
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 
+import reactor.core.publisher.Mono;
+import vincentlow.twittur.gateway.model.constant.ExceptionMessage;
 import vincentlow.twittur.gateway.service.JWTService;
+import vincentlow.twittur.web.model.response.exception.UnauthorizedException;
 
 @Component
 public class AuthenticationFilter extends AbstractGatewayFilterFactory<AuthenticationFilter.Config> {
@@ -38,7 +41,7 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
         HttpHeaders headers = exchange.getRequest()
             .getHeaders();
         if (!headers.containsKey(HttpHeaders.AUTHORIZATION)) {
-          throw new RuntimeException("missing Authorization header");
+          return Mono.error(new UnauthorizedException(ExceptionMessage.AUTHORIZATION_HEADER_IS_MISSING));
         }
 
         String authHeader = headers.get(HttpHeaders.AUTHORIZATION)
@@ -51,7 +54,7 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
         try {
           jwtService.validateToken(authHeader);
         } catch (Exception e) {
-          throw new RuntimeException("un authorized access to application");
+          return Mono.error(new UnauthorizedException(ExceptionMessage.INVALID_OR_EXPIRED_TOKEN));
         }
       }
       return chain.filter(exchange);

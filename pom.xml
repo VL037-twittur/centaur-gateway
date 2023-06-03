@@ -17,9 +17,13 @@
     <description>Twittur Gateway</description>
 
     <modules>
+        <module>gateway-model</module>
         <module>gateway-config</module>
         <module>gateway-service</module>
+        <module>gateway-service-impl</module>
         <module>gateway-filter</module>
+        <module>gateway-web-model</module>
+        <module>gateway-web</module>
         <module>gateway-app</module>
     </modules>
 
@@ -29,6 +33,11 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
