@@ -9,7 +9,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>gateway-app</artifactId>
+    <artifactId>gateway-client-model</artifactId>
     <packaging>jar</packaging>
 
     <properties>
@@ -17,19 +17,5 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>vincentlow.twittur</groupId>
-            <artifactId>gateway-config</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>vincentlow.twittur</groupId>
-            <artifactId>gateway-util</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
 
 </project>
